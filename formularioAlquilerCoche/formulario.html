@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/libreriaFormulario.js"></script>
+    <script src="lib/libreriaJSON.js"></script>
+</head>
+<body>
+    <form>
+        <div id="parte1">
+            <textarea id="informacion"></textarea>
+            <button id="botonProv">CARGAR</button>
+            <h2>Tipo de cliente</h2>
+            <input type="radio" id="persona" name="tipo" value="persona" checked=true>
+            <label for="persona">Persona</label><br>
+            <input type="radio" id="empresa" name="tipo" value="empresa">
+            <label for="empresa">Empresa</label><br>
+            <br><br>
+
+        
+            NIF: <input type="text" id="cif"><br><br>
+            DNI: <input type="text" id="dni"><br><br>
+            Razón social: <input type="text" id="razon_social"><br><br>
+            Nombre: <input type="text" id="nombre">&nbsp;&nbsp;&nbsp;
+            Apellidos: <input type="text" id="apellidos"><br><br>
+            Dirección: <input type="text" id="direccion">&nbsp;&nbsp;&nbsp;
+            CP: <input type="text" id="cp"><br><br>
+            Provincia: <select name="provincia" id="provincia"></select>&nbsp;&nbsp;&nbsp;
+            Municipio: <select name="municipio" id="municipio"></select><br><br>
+            Fecha de nacimiento: <input type="date" id="f_nac"><br><br>
+            Fecha de carnet: <input type="date" id="fcar"><br><br>
+            Teléfono: <input type="text" id="telefono"><br><br>
+        </div>
+
+        <div id="parte2">
+            <h2>Vehículo</h2>
+            Matrícula: <input type="text" id="matricula"><br><br>
+            Fecha de matriculación: <input type="date" id="f_mat"><br><br>
+            Marca: <input type="text" id="marca"><br><br>
+            Modelo: <input type="text" id="modelo"><br><br>
+            Cilindrada: <input type="text" id="cilindrada"><br><br>
+            Puertas: <input type="text" id="puertas"><br><br>
+            Extras: <br>
+            <textarea id="extras" cols="30" rows="10"></textarea>
+        </div>
+
+        <button id="boton">ENVIAR DATOS</button>
+        <style>
+            #parte2{
+                position: absolute;
+                bottom: 200px;
+                left: 700px;
+            }
+            #parte1{
+                position: absolute;
+                left:50px;
+            }
+            #boton{
+                position: absolute;
+                bottom: 150px;
+                left: 1000px;
+            }
+        </style>
+    </form>
+</body>
+</html>

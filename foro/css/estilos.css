@@ -1,0 +1,66 @@
+#chat{
+    position: relative;
+    height: 500px;
+    width: 100%;
+    background-color: lightsteelblue;
+    overflow-y: scroll;
+    border-radius: 10px;
+}
+
+div > div{
+    margin: 30px;
+}
+
+span{
+    margin-right: 20px;
+    font-style: italic;
+    font-size: 80%;
+}
+
+span + span{
+    font-style: normal;
+    font-weight: 800;
+    float: right;
+}
+
+.mensaje{
+    font-size: 150%;
+    font-style: normal;
+}
+
+.cajaMensaje{
+    background-color: cadetblue;
+    padding: 20px;
+    border-radius: 20px;
+    border-bottom-left-radius: 0px;
+    width: 400px;
+    float: left;
+    clear: both;
+}
+
+.cajaMiMensaje{
+    background-color:lightsalmon;
+    padding: 20px;
+    border-radius: 20px;
+    border-bottom-right-radius: 0px;
+    width: 400px;
+    float: right;
+    clear: both;
+}
+
+textarea{
+    resize: none;
+    height: 50px;
+    border-radius: 20px;
+    width: 60%;
+    padding: 10px;
+}
+
+#txtUsuario{
+    border-radius: 20px;
+    height: 50px;
+}
+
+form{
+    margin-top: 20px;
+}

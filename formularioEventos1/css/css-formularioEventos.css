@@ -1,0 +1,43 @@
+th, td {
+    width: 25%;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid #000;
+    border-collapse: collapse;
+ }
+ thead{
+    font-weight: 800;
+    background-color: lightskyblue;
+}
+
+.error{
+    border: solid red 2px;
+}
+
+.span-oculto{
+    visibility: hidden;
+    color: red;
+    font-size: 60%;
+}
+
+.span-visible{
+    visibility: visible;
+    color: red;
+    font-size: 60%;
+}
+
+.txt-dentro{
+    border: solid blue 2px;
+}
+
+.txt-fuera{
+    border: solid black 1px;
+}
+
+.agarrado{
+    cursor: pointer;
+}
+
+.grabbing * {
+    cursor: grabbing;
+ }

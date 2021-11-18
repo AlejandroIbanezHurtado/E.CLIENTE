@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <script src="alumno.js"></script>
+    <script src="formularioAlumno.js"></script>
+</head>
+<body>
+    <form>
+        <p>Nombre: <input type="text" name="nombre" id="f_nombre"></p>
+        <p>Apellido 1: <input  name="apellido1" id="f_apellido1"></p>
+        <p>Apellido 2: <input  name="apellido2" id="f_apellido2"></p>
+        <p>Fecha nac: <input  name="fechaNac" id="f_fnac"></p>
+        <p>DNI: <input  name="dni" id="f_dni"></p>
+
+        <select id="f_curso">
+
+            <option>1º DAW</option>
+            <option>2º DAW</option>
+            <option>1º ASIR</option>
+            <option>2º ASIR</option>
+        
+        </select>
+        <p>
+            <button type="button" onclick="escribir(creaAlumno())">MOSTRAR</button>
+            <button type="reset" onclick="limpiar()">LIMPIAR</button>
+            
+        </p>
+
+      </form>
+
+      <h1><span id="texto"></span><span id="texto2"></span><span id="texto3"></span></h1>
+</body>
+</html>

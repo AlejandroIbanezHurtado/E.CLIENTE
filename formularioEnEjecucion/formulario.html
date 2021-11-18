@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/libFormulario.js"></script>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <form action="">
+        DNI: <input type="text" id="dni" onblur="validarCampoDni()">
+        NOMBRE: <input type="text" id="nombre">
+        EDAD: <input type="text" id="edad" onblur="validarCampoEdad()">
+
+        <button id="boton">AÑADIR</button>
+    </form>
+    <br><br>
+    <table id="tabla" editable="editable" hidden>
+            <tr class="encima">
+                <th>DNI</th>
+                <th>NOMBRE</th>
+                <th>EDAD</th>
+                <th></th>
+            </tr>
+        <tbody id="cuerpoTabla">
+
+        </tbody>    
+    </table>
+
+    <div id="formEditar" hidden>
+        <h2>EDITAR</h2>
+        <input type="text" id="dni2" no_editable>
+        <br><br>
+        <input type="text" id="nombre2">
+        <br><br>
+        <input type="text" id="edad2">
+        <br><br>
+        <button id="guardarCambios">GUARDAR</button>
+        <button id="cancelarCambios">CANCELAR</button>
+    </div>
+    
+</body>
+</html>

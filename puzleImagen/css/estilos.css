@@ -1,0 +1,11 @@
+#imagen{
+    display:block;
+    margin:auto;
+    position: absolute;
+}
+
+#tabla{
+  border: solid;
+  position: absolute;
+  margin-top: -500px;
+}

@@ -1,0 +1,50 @@
+table, td, th 
+{
+  border: 1px solid black;
+}
+
+table 
+{
+  position: relative;
+  width: 60%;
+  border-collapse: collapse;
+}
+
+.error
+{
+  border: 2px solid red;
+}
+
+.bien
+{
+  border: 2px solid green;
+}
+
+.eliminar
+{
+  width: 35px;
+  height: 35px;
+  background-image:url("../imagenes/eliminar.png");
+  border: none;
+  cursor: pointer;
+}
+
+.editar
+{
+  width: 35px;
+  height: 35px;
+  background-image:url("../imagenes/editar.png");
+  border: none;
+  cursor: pointer;
+}
+
+#formEditar
+{
+  position: relative;
+  left: 70%;
+}
+
+.encima
+{
+  cursor: pointer;
+}
