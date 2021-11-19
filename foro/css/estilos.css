@@ -1,10 +1,14 @@
+body{
+    background-color: lightsteelblue;
+}
 #chat{
     position: relative;
-    height: 500px;
+    height: 600px;
     width: 100%;
     background-color: lightsteelblue;
     overflow-y: scroll;
-    border-radius: 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 div > div{
@@ -50,17 +54,54 @@ span + span{
 
 textarea{
     resize: none;
-    height: 50px;
+    height: 35px;
     border-radius: 20px;
-    width: 60%;
+    width: 72%;
     padding: 10px;
+    margin: 0;
+    float: right;
 }
 
 #txtUsuario{
     border-radius: 20px;
     height: 50px;
+    margin: 0;
+    width: 22%;
+    float: left;
 }
 
 form{
-    margin-top: 20px;
+    margin: 0;
+    background-color: lightsteelblue;
+}
+
+.visible{
+    visibility: visible;
+}
+
+.noVisible{
+    visibility: hidden;
+}
+
+.fotoChat{
+    width: 80%;
+    height: 80%;
+}
+
+#imagenPre{
+    float: right;
+    width: 15%;
+    height: 15%;
+}
+
+input{
+    clear: both;
+}
+
+.subirImagen{
+    clear: both;
+}
+
+#enviar{
+    border-radius: 20px;
 }

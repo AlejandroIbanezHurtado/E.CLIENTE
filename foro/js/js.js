@@ -7,26 +7,27 @@ window.addEventListener("load",function(){
     var imagenPre = document.getElementById("imagenPre");
     var ultimo=0;
     var usuarioLogin="Alejandro";
-    var codImagen=null;
 
-    btnEnviar.onclick=function(ev){
-
-        //no hagas lo que estas acostumbrado a hacer
+    btnEnviar.onclick=function(ev)
+    {
         ev.preventDefault();
+        const data = new FormData(document.getElementById('form1'));
+        fetch('insertar.php', { method: 'POST', body: data })
+        .then(function (response) {
+            return response.text();
+        })
+        .then(function (body) {
+            console.log(body);
+        });
 
-        if(usuario.value!="" && mensaje.value!="")
-        {
-            var texto = encodeURI("usuario=" + usuario.value + "&mensaje=" + mensaje.value + "&archivo=" +codImagen);
-            const ajax = new XMLHttpRequest();
-            ajax.open("POST","insertar.php");
-            ajax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-            ajax.send(texto);
-            usuario.value="";
-            mensaje.value="";
-            imagenPre.src="";
-        }
+        usuario.value="";
+        mensaje.value="";
+        imagenPre.src="";
+        imagenPre.className="NoVisible";
     }
 
+
+    
     muestraMensajes=function(){
         const ajax = new XMLHttpRequest();
         ajax.onreadystatechange=function(){
@@ -40,7 +41,10 @@ window.addEventListener("load",function(){
                     var fecha = document.createElement("span");
                     var nombre = document.createElement("span");
                     var br = document.createElement("br");
+                    var br2 = document.createElement("br");
                     var cajaMensaje = document.createElement("div");
+                    var foto = document.createElement("img");
+                    foto.className="fotoChat";
                     
                     var mensaje = document.createElement("span");
                     if(vector[i].usuario==usuarioLogin)
@@ -57,8 +61,13 @@ window.addEventListener("load",function(){
 
                     mensaje.innerText=vector[i].mensaje;
                     fecha.innerText=vector[i].fecha;
+                    if(vector[i].archivo!=null)
+                    {
+                        foto.src="data:image/jpeg;base64,"+vector[i].archivo;
+                        cajaMensaje.appendChild(foto);
+                        cajaMensaje.appendChild(br2);
+                    }
                     
-
                     cajaMensaje.appendChild(mensaje);
                     cajaMensaje.appendChild(br);
                     cajaMensaje.appendChild(fecha);
@@ -66,7 +75,6 @@ window.addEventListener("load",function(){
 
                     div.appendChild(cajaMensaje);
                     
-                    //if(div.)
                     div.scrollTop=div.scrollHeight;
                     ultimo=vector[i].id;
                     
@@ -79,21 +87,17 @@ window.addEventListener("load",function(){
         
     }
 
-
-    //muestraMensajes();
     this.setInterval(muestraMensajes, 1000);
 })
 
 function readFile(input) {
-    
-   
     let file = input.files[0];
-
     let reader = new FileReader();
-    
+    console.log(file);
     reader.readAsDataURL(file);
     
     reader.onload = function() {
+        imagenPre.className="visible";
         imagenPre.src=reader.result; //mostramos la imagen previamente
         codImagen=reader.result;
     };
@@ -101,8 +105,5 @@ function readFile(input) {
     reader.onerror = function() {
         console.log(reader.error);
     };
-
-    console.log(e);
-    
   
 }

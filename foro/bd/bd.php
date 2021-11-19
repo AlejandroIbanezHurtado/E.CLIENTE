@@ -14,7 +14,7 @@ class DB
         $vector = array();
         $resultado = self::$con->query("SELECT * FROM ".$tabla." WHERE id >='".$ultimo."'");
         while ($registro = $resultado->fetch(PDO::FETCH_OBJ)) {
-            $usuario = new usuario($registro->id, $registro->usuario, $registro->mensaje, $registro->fecha);
+            $usuario = new usuario($registro->id, $registro->usuario, $registro->mensaje, $registro->fecha, $registro->imagen);
             $vector [] = $usuario;
         }
         
@@ -42,7 +42,13 @@ class DB
 
     public static function insertarBD($tabla, $nombre, $mensaje, $imagen)
     {
-        $string = "INSERT INTO ".$tabla." (usuario, mensaje, fecha, imagen) VALUES "."('".$nombre."','".$mensaje."', NOW(), '".$imagen."');";
+        if($imagen!=null)
+        {
+            $string = "INSERT INTO ".$tabla." (usuario, mensaje, fecha, imagen) VALUES "."('".$nombre."','".$mensaje."', NOW(), '".$imagen."');";
+        }
+        else{
+            $string = "INSERT INTO ".$tabla." (usuario, mensaje, fecha, imagen) VALUES "."('".$nombre."','".$mensaje."', NOW(), NULL);";
+        }
         $registros = self::$con->exec($string);
     }
 }

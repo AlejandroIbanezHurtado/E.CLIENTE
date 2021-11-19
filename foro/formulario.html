@@ -13,14 +13,14 @@
         
     </div>
     <form action="" method="post" id="form1">
-        USUARIO: <input type="text" name="usuario" id="txtUsuario">
-        <br>
-        MENSAJE: <textarea name="mensaje" cols="30" rows="10" id="txtMensaje"></textarea>
-        <br>
-        IMAGEN: <input type="file" name="imagen" id="imagen" onchange="readFile(this)">
-        <br><br>
-        <input type="submit" name="Enviar" id="enviar">
-        <img src="" alt="" id="imagenPre" width="400" height="400">
+        <input type="text" name="usuario" id="txtUsuario" placeholder="usuario">
+        <textarea name="mensaje" cols="30" rows="10" id="txtMensaje" placeholder="mensaje"></textarea>
+        <div  class="subirImagen">
+            IMAGEN: <input type="file" name="imagen" id="imagen" onchange="readFile(this)">
+            <br>
+            <input type="submit" name="Enviar" id="enviar">
+        </div>
+        <img src="" alt="" id="imagenPre" width="400" height="400" class="noVisible">
     </form>
 </body>
 </html>

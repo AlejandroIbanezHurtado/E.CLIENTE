@@ -9,4 +9,5 @@ $json = DB::selecBD("mensajes",$ultimo);
 $json = json_encode($json);
 
 echo $json;
+
 ?>
